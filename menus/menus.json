@@ -1,0 +1,86 @@
+[
+  {
+    "item_name": "Puff-Puff",
+    "item_description": "Traditional Nigerian donut ball, rolled in sugar",
+    "item_price": 4.99,
+    "item_cost": 3,
+    "item_prepare_time": 10
+  },
+  {
+    "item_name": "SCOTCH EGG",
+    "item_description": "Boiled egg wrapped in a ground meat mixture, coated in breadcrumbs, and deep-fried.",
+    "item_price": 2,
+    "item_cost": 1,
+    "item_prepare_time": 9
+  },
+  {
+    "item_name": "ATA RICE",
+    "item_description": "Small pieces of beef, goat, stipe, and tendon sautéed in crushed green Jamaican pepper.",
+    "item_price": 12,
+    "item_cost": 10,
+    "item_prepare_time": 8
+  },
+  {
+    "item_name": "RICE AND DODO",
+    "item_description": "(plantains) w/chicken, fish, beef or goat",
+    "item_price": 11.99,
+    "item_cost": 9,
+    "item_prepare_time": 8
+  },
+  {
+    "item_name": "Special Shrimp Deluxe",
+    "item_description": "Fresh shrimp sautéed in blended mixture of tomatoes, onion, peppers over choice of rice",
+    "item_price": 12.99,
+    "item_cost": 10,
+    "item_prepare_time": 8
+  },
+  {
+    "item_name": "Whole catfish with rice and vegetables",
+    "item_description": "Whole catfish slow cooked in tomatoes, pepper and onion sauce with seasoning to taste",
+    "item_price": 13.99,
+    "item_cost": 10,
+    "item_prepare_time": 7
+  },
+  {
+    "item_name": "African Salad",
+    "item_description": "With baked beans, egg, tuna, onion, tomatoes , green peas and carrot with your choice of dressing.",
+    "item_price": 8.99,
+    "item_cost": 5,
+    "item_prepare_time": 3
+  },
+  {
+    "item_name": "Seafood Salad",
+    "item_description": "With shrimp, egg and imitation crab meat",
+    "item_price": 5.99,
+    "item_cost": 5,
+    "item_prepare_time": 3
+  },
+  {
+    "item_name": "EBA",
+    "item_description": "Grated cassava",
+    "item_price": 11.99,
+    "item_cost": 9,
+    "item_prepare_time": 8
+  },
+  {
+    "item_name": "AMALA",
+    "item_description": "Yam flour",
+    "item_price": 11.99,
+    "item_cost": 8,
+    "item_prepare_time": 8
+  },
+  {
+    "item_name": "YAM PORRIDGE",
+    "item_description": "in tomatoes sauce",
+    "item_price": 9.99,
+    "item_cost": 6,
+    "item_prepare_time": 7
+  },
+  {
+    "item_name": "Boiled Plantain",
+    "item_description": "w/spinach soup",
+    "item_price": 9.99,
+    "item_cost": 7,
+    "item_prepare_time": 5
+  }
+]

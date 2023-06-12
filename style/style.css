@@ -1,0 +1,736 @@
+/*
+Author: Adrian Sim Huan Tze
+Created: 14th May 2022
+Last modified: --
+Description: Assignment 3
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #fffaf0;
+} */
+
+body {
+  background-color: #fffaf0;
+}
+
+li,
+a,
+button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #375296;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 100px;
+}
+
+#logo {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  margin-right: auto;
+  border-radius: 150px;
+}
+
+button {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+/* Navigation style */
+
+.navbar {
+  border-radius: 0;
+  padding: 0 30px;
+  background-color: rgb(247, 247, 247);
+}
+
+.navbar .company-name {
+  text-transform: capitalize;
+  margin-left: 20px;
+  color: #375296 !important;
+}
+
+.navbar .nav-item a {
+  text-transform: capitalize !important;
+  color: #000 !important;
+  font-size: 20px !important;
+}
+
+.navbar .nav-item a:hover {
+  color: #ff7b00a2 !important;
+}
+
+.navbar .navbar-brand:hover .company-name {
+  color: #375296cc !important;
+}
+
+.navbar .nav-item.active a {
+  color: #ff7b00 !important;
+}
+
+.navbar img {
+  width: 80px;
+}
+
+/* Header Style */
+/* 
+header img {
+  margin-right: 200px;
+  max-width: 100px;
+}
+
+header a:hover {
+  transition: 0.3s;
+  color: black;
+  scale: 1.2;
+}
+
+nav ul li a:hover {
+  color: #0088a9;
+}
+
+header div {
+  min-width: fit-content;
+  margin: 0;
+  float: right;
+  clear: both;
+}
+
+header div a {
+  border-bottom: 5px solid #6a87cf;
+  padding: 20px 50px;
+  margin: 0;
+}
+
+header div a:hover,
+header div a.active:hover {
+  border-bottom: 5px solid #6a87cf;
+  background-color: #6a87cf;
+  color: white;
+}
+
+header div a.active {
+  border-bottom: 5px solid #142c6b;
+  background-color: #445eac;
+  color: white;
+} */
+
+/* Body style */
+
+body h1,
+p,
+td,
+h2 {
+  font-family: "Montserrat", sans-serif;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 200px;
+}
+
+.content .text {
+  position: relative;
+  width: 60%;
+}
+
+.content .action {
+  width: 40%;
+  margin-top: 20px;
+}
+
+body h1 {
+  padding: 20px 40px;
+  background-color: #375296;
+  color: white;
+  width: 35%;
+  min-width: 300px;
+  border: none;
+  border-radius: 50px;
+  justify-content: center;
+  margin: 20px auto;
+  text-align: center;
+}
+
+body h2 {
+  color: black;
+  padding: 20px 20px;
+  margin-left: 100px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  width: 80%;
+  font-size: 60px;
+  text-align: left;
+}
+
+body p {
+  color: black;
+  padding: 20px 20px;
+  margin-left: 100px;
+  margin-bottom: 10px;
+  width: 60%;
+  line-height: 35px;
+  font-size: 20px;
+  text-align: left;
+}
+
+.action img {
+  margin-left: 80px;
+}
+
+.learnMore {
+  display: inherit;
+  text-align: center;
+  width: 60%;
+  margin: 20px 30px;
+  padding: 20px 70px;
+  margin-left: 60px;
+  text-decoration: none;
+  border-radius: 40px;
+  background-color: #e7ae3c;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+  opacity: 0.9;
+}
+
+.learnMore:hover {
+  opacity: 1;
+  background-color: #788cb4;
+  transition: 0.6s;
+}
+
+/* login.php */
+
+p.post_status {
+  font-family: "Montserrat", sans-serif;
+  color: #edf0f1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+}
+
+p.form_failed {
+  font-family: "Montserrat", sans-serif;
+  color: red;
+}
+
+h2#validate_success {
+  font-family: "Montserrat", sans-serif;
+  color: lightgreen;
+  padding: 20px 20px;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  border: lightgreen solid 2px;
+  border-radius: 50px;
+  width: 40%;
+  text-align: center;
+}
+
+h2#validate_failed {
+  font-family: "Montserrat", sans-serif;
+  color: red;
+  padding: 20px 20px;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  border: red solid 2px;
+  border-radius: 50px;
+  width: 40%;
+  text-align: center;
+}
+
+form p {
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 20px;
+}
+
+form {
+  width: 60%;
+  border: #788cb4 solid 5px;
+  margin-left: 270px;
+  padding: 5px 5px;
+  border-radius: 30px;
+  font-family: "Montserrat", sans-serif;
+  background-color: white;
+  color: #375296;
+  margin: 80px auto;
+  padding-bottom: 30px;
+}
+
+form legend {
+  text-align: center;
+  width: 30%;
+  padding: 20px 10px;
+  margin-left: 60px;
+  text-decoration: none;
+  border-radius: 40px;
+  background-color: #e7ae3c;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+}
+
+form fieldset {
+  border: #788cb4 solid 5px;
+  background-color: #788cb4;
+  margin: 20px 30px;
+  padding: 30px 30px;
+  border-radius: 30px;
+}
+
+form label {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  background-color: inherit;
+  font-size: 20px;
+}
+
+form input[type=email] {
+  color: black;
+  font-size: 15px;
+  border: white solid 2px;
+  border-radius: 10px;
+  width: 80%;
+  padding: 12px 20px;
+  margin: 10px 10px;
+}
+
+form input[type=password] {
+  color: black;
+  font-size: 15px;
+  border: white solid 2px;
+  border-radius: 10px;
+  width: 80%;
+  padding: 12px 20px;
+  margin: 10px 10px;
+}
+
+form input[type=submit] {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  width: 20%;
+  border-radius: 50px;
+  border: rgb(55, 82, 150) solid;
+  color: rgb(55, 82, 150);
+  padding: 20px 25px;
+  margin: 10px 20px;
+  background-color: white;
+}
+
+form input[type=submit]:hover {
+  background-color: rgb(55, 82, 150);
+  border: white solid;
+  color: white;
+  transition: 0.7s;
+}
+
+form input[type=reset] {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: red;
+  border-radius: 50px;
+  padding: 20px 25px;
+  margin: 10px 20px;
+  border: red solid;
+  width: 20%;
+  background-color: white;
+}
+
+form input[type=reset]:hover {
+  background-color: red;
+  border: white solid;
+  color: white;
+}
+
+/* friendlist.php */
+#addFriend {
+  text-align: center;
+  width: 25%;
+  margin-left: 120px;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 40px;
+  background-color: #e7ae3c;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+  opacity: 0.9;
+}
+
+#addFriend:hover {
+  transition: 0.7s;
+  opacity: 1;
+  background-color: #375296;
+}
+
+.friendlist {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.friendlist-container {
+  border: 2px solid #375296;
+  border-radius: 20px !important;
+  width: 70%;
+  min-width: 1000px;
+  margin: 0 auto 100px auto;
+}
+
+#menu {
+  margin: 30px auto;
+}
+
+#menu td {
+  border-bottom: 1px solid black;
+  padding: 15px 30px 10px 12px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#menu td p {
+  width: 100%;
+  color: black;
+  padding: 0px 20px;
+  margin-left: 0px;
+  width: 100%;
+  line-height: 15px;
+  font-size: 15px;
+  text-align: left;
+}
+
+#menu .unfriend {
+  background-color: #e7ae3c;
+  color: #fffaf0;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+#menu .unfriend:hover {
+  background-color: #375296;
+  transition: 0.7s;
+}
+
+#checkout {
+  margin-right: 0px;
+  margin-left: 800px;
+  margin-bottom: 30px;
+}
+
+
+table td {
+  color: black;
+  padding: 20px 0;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* about.php */
+
+table#version {
+  margin: 20px auto;
+}
+
+/* friendadd.php */
+
+#addfriendTable {
+  width: 80%;
+  margin: 30px auto;
+  padding: 10px 30px;
+  border: #fffaf0 solid 5px;
+  border-collapse: collapse;
+}
+
+#addfriendTable tr td {
+  background-color: #8191bc;
+  margin-bottom: 20px;
+  border-bottom: #fffaf0 solid 15px;
+  color: #fffaf0;
+  text-align: center;
+}
+
+#addfriendTable a {
+  background-color: #e7ae3c;
+  color: #fffaf0;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+#addfriendTable a:hover {
+  background-color: white;
+  color: #e7ae3c;
+  transition: 0.8s;
+}
+
+table#pre-next-nav {
+  margin: 0 auto 10px auto;
+}
+
+table#pre-next-nav td {
+  text-align: center;
+  width: 5vw;
+}
+
+table#pre-next-nav td button {
+  color: white;
+  background-color: #375296;
+  width: 150px;
+}
+
+table#pre-next-nav td.nav-inactive button {
+  background-color: #37529686;
+}
+
+/* Footer style */
+
+footer {
+  padding: 30px 5%;
+  background-color: #375296;
+}
+
+footer p#footer {
+  color: white;
+  background-color: #375296;
+  text-align: center;
+  font-size: small;
+  margin-left: 200px;
+}
+
+footer table#footer {
+  margin-bottom: 30px;
+  margin-left: 250px;
+  background-color: #375296;
+}
+
+footer .footerAnchor {
+  color: rgba(46, 49, 49, 0.8);
+  background-color: #375296;
+}
+
+footer .footerAnchor:hover {
+  color: rgba(46, 49, 49, 1);
+}
+
+footer table ul li img {
+  width: 40px;
+  height: 40px;
+  background-color: #375296;
+}
+
+footer table ul li {
+  display: inline-block;
+  background-color: #375296;
+  list-style: none;
+}
+
+footer table td ul {
+  background-color: #375296;
+}
+
+footer table thead td {
+  color: white;
+  background-color: #375296;
+  font-weight: bolder;
+  padding: 10px 10px;
+  margin: 10px 10px;
+}
+
+footer table tbody td {
+  color: white;
+  background-color: #375296;
+  padding: 10px 10px;
+  margin: 10px 10px;
+}
+
+footer .footerAnchor {
+  color: white;
+}
+
+footer .footerAnchor img {
+  background-color: #375296;
+  padding: 2px;
+  max-width: 15%;
+  height: auto;
+  clear: both;
+  border-radius: 40px;
+}
+
+/* about.php */
+
+div.about-container {
+  margin: 30px auto 30px auto;
+  width: 80vw;
+  min-width: 800px;
+}
+
+div.about-container p {
+  margin: 0 0 50px 0;
+  text-align: justify;
+  padding: 30px 50px;
+  width: 100%;
+  min-height: 300px;
+  border: 5px solid #375296;
+  box-shadow: 5px 10px #a8a8a8;
+  background-color: white;
+}
+
+div.about-container p:nth-child(odd) {
+  border-radius: 70px 0 70px 0;
+}
+
+div.about-container p:nth-child(even) {
+  border-radius: 0 70px 0 70px;
+}
+
+div.about-container p img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+div.about-container p:nth-child(odd) img {
+  margin-left: 30px;
+  float: right;
+}
+
+div.about-container p:nth-child(even) img {
+  margin-right: 30px;
+  float: left;
+}
+
+/*Posting.php*/
+div#result {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #bcbcd4;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+div#result-wrapper {
+  background-color: aliceblue;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  height: 400px;
+}
+
+div#container {
+  background-color: #edb138;
+  width: 70%;
+  margin: 0 auto 100px auto;
+  padding: 30px;
+  border: solid 5px black;
+  border-radius: 20px;
+}
+
+div.chats {
+  max-height: 40px;
+  background-color: inherit;
+  width: 90%;
+  margin-bottom: 70px;
+  padding: 0px;
+}
+
+div.chats p {
+  margin-bottom: 0px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 90%;
+  border-radius: 5px;
+  background-color: #345195;
+  color: white;
+  font-size: medium;
+}
+
+div.chats p#msg {
+  margin-top: 20px;
+}
+
+
+div.chats p strong {
+  background-color: inherit;
+  color: white;
+}
+
+div#container form {
+  margin-bottom: 0px;
+  margin-top: 30px;
+  margin-left: 100px;
+  padding: 0px;
+  width: 80%;
+}
+
+
+div#container form textarea {
+  width: 90%;
+  height: 100px;
+  margin-left: 30px;
+  margin-bottom: 0px;
+  border: 3px solid #98785f;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: normal;
+  font-family: "Montserrat", sans-serif;
+}
+
+div#container form input[type='submit'] {
+  margin: 0 auto;
+  padding: 5px 0;
+}
+
+div#container form div.form-btn,
+div#container form div.form-text {
+  background-color: inherit;
+  width: 100%;
+  padding: 0;
+  border-radius: inherit;
+  margin-top: 15px;
+}
+
+div#container form div.form-btn {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+div#discussion h2 {
+  margin-left: 200px;
+  font-size: xx-large
+}
